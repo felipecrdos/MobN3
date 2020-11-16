@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sprite/space_b.jpg" type="Texture" id=1]
+[ext_resource path="res://src/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/font/pixelx21.tres" type="DynamicFont" id=3]
+[ext_resource path="res://src/StarParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/List.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.313726 )
+
+[node name="List" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -150 )
+
+[node name="StarParticle" parent="." instance=ExtResource( 4 )]
+
+[node name="VBMain" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MTop" type="MarginContainer" parent="VBMain"]
+margin_right = 720.0
+margin_bottom = 981.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 18
+custom_constants/margin_top = 36
+custom_constants/margin_left = 18
+
+[node name="VBTop" type="VBoxContainer" parent="VBMain/MTop"]
+margin_left = 18.0
+margin_top = 36.0
+margin_right = 702.0
+margin_bottom = 981.0
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBMain/MTop/VBTop"]
+margin_right = 684.0
+margin_bottom = 945.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBRegister" type="VBoxContainer" parent="VBMain/MTop/VBTop/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll" type="ScrollContainer" parent="VBMain/MTop/VBTop/Panel/VBRegister"]
+margin_right = 684.0
+margin_bottom = 945.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Label" type="Label" parent="VBMain/MTop/VBTop/Panel/VBRegister/Scroll"]
+margin_right = 684.0
+margin_bottom = 945.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="VBDown" type="VBoxContainer" parent="VBMain"]
+margin_top = 985.0
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="HBButtons" type="HBoxContainer" parent="VBMain/VBDown"]
+margin_top = 129.0
+margin_right = 720.0
+margin_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Register" parent="VBMain/VBDown/HBButtons" instance=ExtResource( 2 )]
+margin_left = 90.0
+margin_right = 268.0
+margin_bottom = 36.0
+size_flags_horizontal = 6
+size_flags_vertical = 7
+text = "register"
+scene = "res://src/Register.tscn"
+
+[node name="Back" parent="VBMain/VBDown/HBButtons" instance=ExtResource( 2 )]
+margin_left = 493.0
+margin_right = 589.0
+margin_bottom = 36.0
+size_flags_horizontal = 6
+size_flags_vertical = 7
+text = "back"
+scene = "res://src/Main.tscn"
+[connection signal="send_scene" from="VBMain/VBDown/HBButtons/Register" to="." method="_on_Register_send_scene"]
+[connection signal="send_scene" from="VBMain/VBDown/HBButtons/Back" to="." method="_on_Back_send_scene"]
