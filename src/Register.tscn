@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/font/pixelx30.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/Register.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprite/space_b.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/sci-fi_expansion_4k.jpg" type="Texture" id=4]
 [ext_resource path="res://assets/font/pixelx21.tres" type="DynamicFont" id=5]
 [ext_resource path="res://src/StarParticle.tscn" type="PackedScene" id=6]
 
