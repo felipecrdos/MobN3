@@ -34,22 +34,22 @@ func clear_fields():
 
 func empty_fields():
 	var is_empty = false
-	if _name.text == '':
+	if _name.text.strip_edges() == '':
 		if not "type name" in _name_label.text:
 			_name_label.text = "type name"
 		set_label_color(_name_label, alert_color)
 		is_empty = true
-	if _diameter.text == '':
+	if _diameter.text.strip_edges() == '':
 		if not "type diameter" in _diameter_label.text:
 			_diameter_label.text = "type diameter"
 		set_label_color(_diameter_label, alert_color)
 		is_empty = true
-	if _distance.text == '':
+	if _distance.text.strip_edges() == '':
 		if not "type distance" in _distance_label.text:
 			_distance_label.text = "type distance"
 		set_label_color(_distance_label, alert_color)
 		is_empty = true
-	if _discoverer.text == '':
+	if _discoverer.text.strip_edges() == '':
 		if not "type discoverer" in _discoverer_label.text:
 			_discoverer_label.text = "type discoverer"
 		set_label_color(_discoverer_label, alert_color)
@@ -64,7 +64,7 @@ func _on_Save_send_scene(scene):
 	if !empty_fields():
 		var asteroid = {
 			"name": _name.text,
-			"diamter": _diameter.text,
+			"diameter": _diameter.text,
 			"distance": _distance.text,
 			"discoverer": _discoverer.text
 		}
