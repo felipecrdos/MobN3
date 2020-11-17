@@ -3,10 +3,6 @@ extends Node
 # Variables
 var data_path = "res://data/data.json"
 
-# Initializer
-func _ready():
-	print(load_data())
-	
 # Save data
 func save_data(data):
 	var file = File.new()

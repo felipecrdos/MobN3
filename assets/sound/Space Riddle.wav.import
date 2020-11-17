@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Space Riddle.wav-15bbad035a68f751a7a60f3a63a401a9.sample"
+
+[deps]
+
+source_file="res://assets/sound/Space Riddle.wav"
+dest_files=[ "res://.import/Space Riddle.wav-15bbad035a68f751a7a60f3a63a401a9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
